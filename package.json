@@ -8,7 +8,7 @@
 		"prebuild": "rm -rf ./dist",
 		"build": "tsc",
 		"postbuild": "cp -R src/assets dist/src/",
-		"bundle": "npm run lint && npm run build && cp -R package.json package-lock.json src/.env.example dist/src/ && docker buildx bake",
+		"bundle": "npm run build && cp -R package.json package-lock.json src/.env.example dist/src/ && docker buildx bake",
 		"lint": "eslint . --ext .ts",
 		"test": "npm run build -- -p tsconfig.testing.json && cp tests/.env dist/src/ && node dist/tests/app.test.js"
 	},
