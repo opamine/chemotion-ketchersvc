@@ -8,8 +8,8 @@ RUN npm install --omit=dev
 ADD [".", "/src/"]
 
 EXPOSE 9000
-ENV CONFIG_PORT=9001 \
-    CONFIG_KETCHER_URL=http://localhost:9001 \
+ENV CONFIG_PORT=4002 \
+    CONFIG_KETCHER_URL=http://localhost:4002 \
     CONFIG_MIN_WORKERS=1 \
     CONFIG_MAX_WORKERS=4
 
