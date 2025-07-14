@@ -14,7 +14,7 @@ interface IConfig {
 
 function configure(): IConfig {
 	return {
-		port: parseInt(process.env['CONFIG_PORT'] || '9000'),
+		port: parseInt(process.env['CONFIG_PORT'] || '9001'),
 		min_threads: parseInt(process.env['CONFIG_MIN_WORKERS'] || '1'),
 		max_threads: parseInt(process.env['CONFIG_MAX_WORKERS'] || '4'),
 		ketcher_url: process.env['CONFIG_KETCHER_URL'] || 'http://localhost:9000/ketcher'
