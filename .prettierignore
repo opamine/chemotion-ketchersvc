@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+/dist
+src/.env
+src/.env.*
+!src/.env.example
+
+# Ignore static user assets
+src/assets/
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

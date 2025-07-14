@@ -1,0 +1,32 @@
+{
+	"name": "ketchersvc",
+	"version": "1.0.0",
+	"description": "Backend service to render molfiles to SVG using Ketcher",
+	"main": "dist/app.js",
+	"scripts": {
+		"start": "npm run build && cp src/.env dist/src/ && node dist/src/app.js",
+		"prebuild": "rm -rf ./dist",
+		"build": "tsc",
+		"postbuild": "cp -R src/assets dist/src/",
+		"bundle": "npm run lint && npm run build && cp -R package.json package-lock.json src/.env.example dist/src/ && docker buildx bake",
+		"lint": "eslint . --ext .ts",
+		"test": "npm run build -- -p tsconfig.testing.json && cp tests/.env dist/src/ && node dist/tests/app.test.js"
+	},
+	"author": "Peter Krauß <peter.krauss@kit.edu>",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"fastify": "^5.0.0",
+		"piscina": "^4.7.0",
+		"selenium-webdriver": "^4.24.1"
+	},
+	"devDependencies": {
+		"@types/selenium-webdriver": "^4.1.26",
+		"@typescript-eslint/eslint-plugin": "^8.6.0",
+		"@typescript-eslint/parser": "^8.6.0",
+		"eslint": "^9.10.0",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "^3.3.3",
+		"typescript": "^5.6.2"
+	}
+}
