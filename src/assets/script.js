@@ -1,6 +1,6 @@
 window.renderMolfile = function renderMolfile(molfile) {
     window.alert = () => {}
-    ketcher.init()
+    // ketcher.init()
     ketcher.setMolecule(molfile)
     ui.render.update()
     svg = ui.client_area.querySelector('svg')
