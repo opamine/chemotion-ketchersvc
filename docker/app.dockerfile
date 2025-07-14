@@ -9,7 +9,7 @@ ADD [".", "/src/"]
 
 EXPOSE 9000
 ENV CONFIG_PORT=9001 \
-    CONFIG_KETCHER_URL=http://localhost:9000/ketcher \
+    CONFIG_KETCHER_URL=http://localhost:9000 \
     CONFIG_MIN_WORKERS=1 \
     CONFIG_MAX_WORKERS=4
 
